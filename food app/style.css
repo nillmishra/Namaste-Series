@@ -48,6 +48,26 @@
   color: #006400; /* Darker green on hover */
   background-color: #e0f2e0; /* light green background on hover */
 }
+.login {
+  background-color: white;
+  color: green;
+  border: 2px solid green;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  outline: none;
+  user-select: none;
+}
+
+/* Hover effect */
+.login:hover {
+  background-color: green;
+  color: white;
+  border-color: green;
+}
 
 
 .App {
@@ -56,30 +76,53 @@
     color: green;
 }
 
-/* Body component styles */
 .search-bar {
-  margin: 20px auto;
-  max-width: 400px;
-  text-align: center;
-  background-color: #f0fff0; /* a very light greenish background */
-  cursor: text;
-  font-weight: bold;
-  color: green;
-  /* padding and border removed here to style input inside instead */
-}
+    margin: 20px auto;
+    max-width: 400px;
+    display: flex;
+    background-color: #f0fff0; /* very light greenish background */
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: text;
+    font-weight: bold;
+    color: green;
+  }
 
-/* Style the input element inside search-bar */
 .search-bar input {
-  width: 100%;
+  flex: 1;
   padding: 8px 12px;
   border: 2px solid green;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;   
   font-size: 16px;
   color: green;
   outline: none;
-  font-weight: normal; /* override bold from container */
-  box-sizing: border-box; /* ensure padding + border doesn't overflow */
+  font-weight: normal;
+  box-sizing: border-box;
+  background-color: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.search-bar input:hover {
+  border-color: darkgreen;   /* change border color on hover */
+  box-shadow: 0 0 5px 1px rgba(0, 100, 0, 0.5); /* subtle green glow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .search-bar button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-bar button:hover {
+    background-color: #004d00; /* darker green on hover */
+  }
 .filter-card {
   display: flex;
   justify-content: center;
@@ -115,6 +158,48 @@
   gap: 60px;
   padding: 20px;
   flex-wrap: wrap;
+}
+.shimmer-card{
+  display: flex;
+  justify-content: center;
+  margin-top:100px;
+  gap: 60px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card-shimmer {
+  width: 250px;
+  height: 180px;               /* Add height to match card-container */
+  border-radius: 10px;
+  background: #ccc;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1); /* Optional: match card style */
+  border: none;     /* Optional: match card style */
+  margin-bottom: 24px;         /* Optional: match card style */
+}
+
+.card-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -250px;                              /* Match card width */
+  height: 100%;
+  width: 250px;                              /* Card width */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(500px);             /* 2x card width */
+  }
 }
 
 .card-container {
