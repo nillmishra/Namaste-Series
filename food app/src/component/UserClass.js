@@ -1,36 +1,51 @@
-import React  from "react"
+import React from "react";
 
-class UserClass extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            // count : 0
-}
-        // console.log(this.props.name+"Child Constructor Called")
-    }
-    componentDidMount(){
-        // console.log(this.props.name+"Child componentMountCalled")
-    }
-    render(){
-        // console.log(this.props.name+"Child Render Called") 
-        const {name, location, contact} = this.props; 
-        const{count} = this.state;
-        return(
-            <div className="user-card">
-                {/* <h1>Count : {count}</h1>
-                <button onClick={()=> {
-                    this.setState({
-                        count: this.state.count + 1
-                    });
-                }}>
-                    Count Increase
-                </button> */}
-                <h2>Name : {name}</h2>
-                <h3>Location: {location}</h3>
-                <h4>Contact: {contact}</h4>
-            </div>
-        )
-    }
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: {}, // Initialize as empty object
+    };
+  }
+
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/nillmishra");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
+  }
+
+  render() {
+    const { name, location, login, avatar_url } = this.state.userInfo || {};
+
+    return (
+      <div className="user-card-container">
+        <div className="user-card">
+          <img src={avatar_url} alt="User Avatar" className="user-avatar" />
+          <h2 className="user-name">Name: {name || "N/A"}</h2>
+          <h3 className="user-location">Location: {location || "N/A"}</h3>
+          <h4 className="user-contact">Contact: {login || "N/A"}</h4>
+        </div>
+        <div className="user-card">
+          <img src={avatar_url} alt="User Avatar" className="user-avatar" />
+          <h2 className="user-name">Name: {name || "N/A"}</h2>
+          <h3 className="user-location">Location: {location || "N/A"}</h3>
+          <h4 className="user-contact">Contact: {login || "N/A"}</h4>
+        </div>
+        <div className="user-card">
+          <img src={avatar_url} alt="User Avatar" className="user-avatar" />
+          <h2 className="user-name">Name: {name || "N/A"}</h2>
+          <h3 className="user-location">Location: {location || "N/A"}</h3>
+          <h4 className="user-contact">Contact: {login || "N/A"}</h4>
+        </div>
+        
+      </div>
+    );
+  }
 }
 
 export default UserClass;
