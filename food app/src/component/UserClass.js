@@ -12,7 +12,7 @@ class UserClass extends React.Component{
         // console.log(this.props.name+"Child componentMountCalled")
     }
     render(){
-        // console.log(this.props.name+"Child Render Called")
+        // console.log(this.props.name+"Child Render Called") 
         const {name, location, contact} = this.props;
         const{count} = this.state;
         return(
