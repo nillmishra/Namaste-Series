@@ -13,7 +13,7 @@ class UserClass extends React.Component{
     }
     render(){
         // console.log(this.props.name+"Child Render Called") 
-        const {name, location, contact} = this.props;
+        const {name, location, contact} = this.props; 
         const{count} = this.state;
         return(
             <div className="user-card">
