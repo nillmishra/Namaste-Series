@@ -35,6 +35,20 @@
   gap: 24px;
 }
 
+ a:link {
+      text-decoration: none;
+}
+
+.link-styles{
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 8px 12px;
+  border-radius: 6px;
+
+}
+
 .navbar li {
   color: green;
   font-weight: bold;
@@ -45,7 +59,7 @@
 }
 
 .navbar li:hover {
-  color: #006400; /* Darker green on hover */
+  color: green; /* Darker green on hover */
   background-color: #e0f2e0; /* light green background on hover */
 }
 .login {
@@ -152,6 +166,8 @@
   color: white;
 }
 
+
+
 .res-container {
   display: flex;
   justify-content: center;
@@ -203,7 +219,8 @@
 }
 
 .card-container {
-  width: 250px;
+  width: 300px;           /* fixed width for all */
+  height: 350px;          /* fixed height for all */
   box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
@@ -214,9 +231,9 @@
   color: green;
   font-family: Arial, sans-serif;
   margin-bottom: 24px;
-  
+  display: flex;
+  flex-direction: column;
 }
-
 .card-container:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
@@ -224,7 +241,7 @@
 
 .card-container img {
   width: 100%;
-  height: 150px;
+  height: 180px;
   object-fit: cover;
   border-bottom: 1px solid green;
 }
@@ -253,4 +270,111 @@
 .description{
     margin-left: 20px;
 }
+.menu-container {
+  padding: 20px;
+}
 
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.item-card{
+   width: 300px;           /* fixed width for all */
+  height: 320px;
+  box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid green;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  color: green;
+  font-family: Arial, sans-serif;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.item-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid green;
+}
+.card-list{
+  margin-top: 50px;
+}
+.resMenu{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.menu-container {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #f9fff9; /* very light green background */
+  border-radius: 12px;
+  border: 1px solid green;
+  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.1);
+  color: green;
+  font-family: Arial, sans-serif;
+}
+
+.info-container {
+  text-align: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid green;
+  margin-bottom: 24px;
+}
+
+.reName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #004d00; /* Darker green for emphasis */
+  margin: 0;
+}
+
+.reinfo {
+  font-size: 16px;
+  font-weight: 600;
+  color: green;
+  margin-top: 6px;
+}
+
+.resMenu {
+  font-size: 22px;
+  font-weight: 700;
+  color: #005c1a;
+  margin: 0 0 12px 0;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 5px solid green;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: green;
+  margin: 0 0 24px 0;
+  width: 100%;
+}
+.menu-button{
+  background-color: green;
+  color: white;
+  width: 70px;
+  text-align: center;
+  border: none;
+  position: absolute;
+  border-radius: 25px;
+  padding-bottom: 5PX;
+  padding-top: 5px;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}

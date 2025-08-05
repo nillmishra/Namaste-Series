@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constant";
 // import logo from "../assets/Logo.png";
 import { useEffect, useState } from "react";
+import {Link} from "react-router-dom"
 const Header = () => {
     const [btnName, setbtnName] = useState("Login");
     console.log("Header Render");
@@ -18,13 +19,13 @@ const Header = () => {
       <img src={LOGO_URL} className="logo" alt="Logo" />
     </div>
     <div className="navbar">
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
+    <ul>
+      <li><Link className={"link-styles"} to="/">Home</Link></li>
+      <li><Link className={"link-styles"} to="/about">About Us</Link></li>
+      <li><Link className={"link-styles"} to="/contact">Contact Us</Link></li>
+      <li><Link className={"link-styles"} to="">Cart</Link></li>
+    </ul>
+  </div>
     <button
       className="login"
       onClick={() => {
