@@ -277,37 +277,63 @@
 .card-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 10px;
   justify-content: center;
   padding: 0 10px;
+  margin-top: 20px;
 }
 
-.item-card{
-   width: 300px;           /* fixed width for all */
-  height: 320px;
+
+.item-card {
+  display: flex;
+  width: 840px;
+  height: 220px; /* default height */
   box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
   background-color: #ffffff;
   border: 1px solid green;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, height 0.3s ease;
   cursor: pointer;
   color: green;
   font-family: Arial, sans-serif;
   margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
   position: relative;
 }
-.item-card img {
+
+
+.item-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
+}
+
+
+.item-card.expanded {
+  height: auto; /* allows growth in height when expanded */
+  align-items: flex-start; /* align items on top when expanded */
+}
+
+.image-box {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-left: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.6);
+  background-color: white;
+}
+
+.image-box img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid green;
+  height: 100%;
+  object-fit: cover; /* ensures image covers box without distortion */
+  display: block;
 }
-.card-list{
-  margin-top: 50px;
-}
+
+
 .resMenu{
   margin-top: 20px;
   text-align: center;
@@ -315,7 +341,7 @@
 
 .menu-container {
   padding: 20px;
-  max-width: 1500px;
+  max-width: 850px;
   margin: 0 auto;
   margin-top: 30px;
   background-color: #f9fff9; /* very light green background */
@@ -490,4 +516,79 @@ hr {
   color: #609960;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+/* Container div for ResCategory */
+.res-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 12px auto;
+  padding: 10px 16px;
+  background-color: #f0fff0;     /* very light green background */
+  border: 2px solid green;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: green;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+/* Hover effect */
+.res-category:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Style for the count inside parentheses */
+.res-category span:first-child {
+  font-size: 16px;
+}
+
+/* Style for the arrow */
+.res-category span:last-child {
+  font-size: 20px;
+}
+
+
+
+
+.description {
+  padding: 10px 16px;
+  flex-grow: 1;
+  color: green;
+  position: relative;
+}
+
+.description-text {
+  max-height: 60px; /* limit height */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  white-space: normal;
+}
+
+.description-text.expanded {
+  max-height: 1000px; /* large to show full text */
+}
+
+.more-button {
+  background: none;
+  border: none;
+  color: green;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.menu-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
 }

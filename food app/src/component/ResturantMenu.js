@@ -1,55 +1,55 @@
-import useResturantMenu from "../utils/useResturantMenu"
+import useResturantMenu from "../utils/useResturantMenu";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import CardList from "./CardList";
-
+import ResCategory from "./ResCategory";
 
 const RestaurantMenu = () => {
-
   const { resId } = useParams();
   const resInfo = useResturantMenu(resId);
+
   if (!resInfo) {
     return <Shimmer />;
   }
 
+  // Safe access with optional chaining & fallback to empty objects/arrays
+  const infoCard = resInfo?.cards?.[2]?.card?.card?.info || {};
+  const groupedCard = resInfo?.cards?.[5]?.groupedCard?.cardGroupMap?.REGULAR;
+
   const {
-    name,
+    name = "Unknown Restaurant",
     cuisines = [],
-    costForTwoMessage,
-  } = resInfo?.cards?.[2]?.card?.card?.info || {};
+    costForTwoMessage = "Cost info not available",
+  } = infoCard;
 
-  const regularCards =
-    resInfo?.cards?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
+  const categories = (groupedCard?.cards || []).filter(
+    (c) =>
+      c.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
 
-  let itemCards = [];
+  console.log("Restaurant Info:", resInfo);
+  console.log("Categories:", categories);
 
-  // Try to extract standard itemCards
-  const standardItemCards = regularCards.find((c) => c.card?.card?.itemCards)
-    ?.card.card.itemCards;
-
-  // If not found, check for a "carousel" with dishes
-  if (standardItemCards) {
-    itemCards = standardItemCards;
-  } else {
-    const carousel = regularCards.find((c) => c.card?.card?.carousel)?.card.card
-      .carousel;
-    if (carousel) {
-      // Flatten all dishes from all carousel arrays (if multiple)
-      itemCards = carousel.flatMap((carouselGroup) => carouselGroup.dishes);
-    }
-  }
   return (
-    <div className="menu-container">
-      <div className="info-container">
-        <h1 className="reName">{name}</h1>
-        <p className="reinfo">
-          {cuisines.join(", ")} - {costForTwoMessage}
-        </p>
+    <div>
+      <div className="menu-container">
+        <div className="info-container">
+          <h1 className="reName">{name}</h1>
+          <p className="reinfo">
+            {cuisines.join(", ")} - {costForTwoMessage}
+          </p>
+        </div>
+        <h2 className="resMenu">Menu</h2>
+        <hr />
+        <div>
+          {categories.map((cat, index) => (
+            <ResCategory
+              key={cat.card.card.title || index}
+              category={cat.card.card} // passing the actual category object here
+            />
+          ))}
+        </div>
       </div>
-
-      <h2 className="resMenu">Menu</h2>
-      <hr />
-    <CardList itemCards = {itemCards}/>
     </div>
   );
 };
