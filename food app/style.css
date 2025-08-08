@@ -1,11 +1,11 @@
 .header {
     background-color: white;
-    color: green;
+    color: #ff3b1f;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
-    border: 2px solid green;
+    border: 2px solid #ff3b1f;
     height: 80px; /* Fixed header height */
     box-sizing: border-box;
     overflow: hidden;
@@ -35,22 +35,21 @@
   gap: 24px;
 }
 
- a:link {
-      text-decoration: none;
+a:link {
+    text-decoration: none;
 }
 
 .link-styles{
-  color: green;
+  color: #ff3b1f;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.2s;
   padding: 8px 12px;
   border-radius: 6px;
-
 }
 
 .navbar li {
-  color: green;
+  color: #ff3b1f;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.2s;
@@ -59,13 +58,13 @@
 }
 
 .navbar li:hover {
-  color: green; /* Darker green on hover */
-  background-color: #e0f2e0; /* light green background on hover */
+  color: #cc3119; /* darker #ff3b1f */
+  background-color: #ffdfd8; /* lighter #ff3b1f */
 }
 .login {
   background-color: white;
-  color: green;
-  border: 2px solid green;
+  color: #ff3b1f;
+  border: 2px solid #ff3b1f;
   border-radius: 8px;
   padding: 10px 20px;
   font-weight: bold;
@@ -78,37 +77,36 @@
 
 /* Hover effect */
 .login:hover {
-  background-color: green;
+  background-color: #ff3b1f;
   color: white;
-  border-color: green;
+  border-color: #ff3b1f;
 }
-
 
 .App {
     background: white;
     min-height: 100vh;
-    color: green;
+    color: #ff3b1f;
 }
 
 .search-bar {
     margin: 20px auto;
     max-width: 400px;
     display: flex;
-    background-color: #f0fff0; /* very light greenish background */
+    background-color: #ffdfd8; /* very light #ff3b1f */
     border-radius: 8px;
     overflow: hidden;
     cursor: text;
     font-weight: bold;
-    color: green;
-  }
+    color: #ff3b1f;
+}
 
 .search-bar input {
   flex: 1;
   padding: 8px 12px;
-  border: 2px solid green;
+  border: 2px solid #ff3b1f;
   border-radius: 8px 0 0 8px;   
   font-size: 16px;
-  color: green;
+  color: #ff3b1f;
   outline: none;
   font-weight: normal;
   box-sizing: border-box;
@@ -117,26 +115,26 @@
 }
 
 .search-bar input:hover {
-  border-color: darkgreen;   /* change border color on hover */
-  box-shadow: 0 0 5px 1px rgba(0, 100, 0, 0.5); /* subtle green glow */
+  border-color: #cc3119;   /* darker shade */
+  box-shadow: 0 0 5px 1px rgba(255, 59, 31, 0.5); /* subtle glow */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-  .search-bar button {
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
-  }
+.search-bar button {
+  background-color: #ff3b1f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
 
-  .search-bar button:hover {
-    background-color: #004d00; /* darker green on hover */
-  }
+.search-bar button:hover {
+  background-color: #cc3119; /* darker shade */
+}
 .filter-card {
   display: flex;
   justify-content: center;
@@ -149,10 +147,10 @@
 
 .filter-card > div {
   flex: 1; /* each box takes equal width */
-  background-color: #f0fff0; /* light greenish background */
-  color: green;
+  background-color: #ffdfd8; /* light background */
+  color: #ff3b1f;
   font-weight: bold;
-  border: 2px solid green;
+  border: 2px solid #ff3b1f;
   border-radius: 10px;
   padding: 15px 0;
   text-align: center;
@@ -162,11 +160,9 @@
 }
 
 .filter-card > div:hover {
-  background-color: green;
+  background-color: #ff3b1f;
   color: white;
 }
-
-
 
 .res-container {
   display: flex;
@@ -191,7 +187,7 @@
   background: #ccc;
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1); /* Optional: match card style */
+  box-shadow: 0px 4px 10px rgba(255, 59, 31, 0.1); /* shadow using #ff3b1f */
   border: none;     /* Optional: match card style */
   margin-bottom: 24px;         /* Optional: match card style */
 }
@@ -200,9 +196,9 @@
   content: "";
   position: absolute;
   top: 0;
-  left: -250px;                              /* Match card width */
+  left: -250px;                      /* Match card width */
   height: 100%;
-  width: 250px;                              /* Card width */
+  width: 250px;                      /* Card width */
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
@@ -214,21 +210,21 @@
 
 @keyframes shimmer {
   100% {
-    transform: translateX(500px);             /* 2x card width */
+    transform: translateX(500px);       /* 2x card width */
   }
 }
 
 .card-container {
   width: 300px;           /* fixed width for all */
   height: 350px;          /* fixed height for all */
-  box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(255, 59, 31, 0.1);
   border-radius: 10px;
   overflow: hidden;
   background-color: #ffffff;
-  border: 1px solid green;
+  border: 1px solid #ff3b1f;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  color: green;
+  color: #ff3b1f;
   font-family: Arial, sans-serif;
   margin-bottom: 24px;
   display: flex;
@@ -236,14 +232,14 @@
 }
 .card-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 59, 31, 0.3);
 }
 
 .card-container img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid #ff3b1f;
 }
 
 /* Headings inside card */
@@ -251,21 +247,21 @@
   margin: 12px 0 4px 0;
   font-weight: 700;
   font-size: 20px;
-  color: #005c1a;
+  color: #cc3119; /* darker #ff3b1f */
 }
 
 .description h4 {
   margin: 6px 0;
   font-weight: 600;
   font-size: 16px;
-  color: green;
+  color: #ff3b1f;
   letter-spacing: 0.2px;
 }
 
 /* Optional: space status line out */
 .description h4:last-child {
   margin-bottom: 14px;
-  color: #006400;
+  color: #cc3119;
 }
 .description{
     margin-left: 20px;
@@ -283,19 +279,18 @@
   margin-top: 20px;
 }
 
-
 .item-card {
   display: flex;
   width: 840px;
   height: 220px; /* default height */
-  box-shadow: 0px 4px 10px rgba(0, 100, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(255, 59, 31, 0.1);
   border-radius: 10px;
   overflow: hidden;
   background-color: #ffffff;
-  border: 1px solid green;
+  border: 1px solid #ff3b1f;
   transition: transform 0.2s, box-shadow 0.2s, height 0.3s ease;
   cursor: pointer;
-  color: green;
+  color: #ff3b1f;
   font-family: Arial, sans-serif;
   margin-bottom: 24px;
   align-items: center;
@@ -303,12 +298,10 @@
   position: relative;
 }
 
-
 .item-card:hover {
   transform: scale(1.01);
-  box-shadow: 0 8px 20px rgba(0, 100, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 59, 31, 0.3);
 }
-
 
 .item-card.expanded {
   height: auto; /* allows growth in height when expanded */
@@ -322,7 +315,7 @@
   margin-left: 10px;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.6);
+  box-shadow: 0px 4px 10px rgba(255, 59, 31, 0.6);
   background-color: white;
 }
 
@@ -332,7 +325,6 @@
   object-fit: cover; /* ensures image covers box without distortion */
   display: block;
 }
-
 
 .resMenu{
   margin-top: 20px;
@@ -344,54 +336,54 @@
   max-width: 850px;
   margin: 0 auto;
   margin-top: 30px;
-  background-color: #f9fff9; /* very light green background */
+  background-color: #ffe6e1; /* very light #ff3b1f background */
   border-radius: 12px;
-  border: 1px solid green;
-  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.1);
-  color: green;
+  border: 1px solid #ff3b1f;
+  box-shadow: 0 4px 15px rgba(255, 59, 31, 0.1);
+  color: #ff3b1f;
   font-family: Arial, sans-serif;
 }
 
 .info-container {
   text-align: center;
   padding-bottom: 16px;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #ff3b1f;
   margin-bottom: 24px;
 }
 
 .reName {
   font-size: 28px;
   font-weight: 700;
-  color: #004d00; /* Darker green for emphasis */
+  color: #cc3119; /* darker #ff3b1f for emphasis */
   margin: 0;
 }
 
 .reinfo {
   font-size: 16px;
   font-weight: 600;
-  color: green;
+  color: #ff3b1f;
   margin-top: 6px;
 }
 
 .resMenu {
   font-size: 22px;
   font-weight: 700;
-  color: #005c1a;
+  color: #cc3119;
   margin: 0 0 12px 0;
   text-align: left;
   padding-left: 10px;
-  border-left: 5px solid green;
+  border-left: 5px solid #ff3b1f;
 }
 
 hr {
   border: none;
   height: 2px;
-  background-color: green;
+  background-color: #ff3b1f;
   margin: 0 0 24px 0;
   width: 100%;
 }
 .menu-button{
-  background-color: green;
+  background-color: #ff3b1f;
   color: white;
   width: 70px;
   text-align: center;
@@ -404,17 +396,17 @@ hr {
   bottom: 10px;
   cursor: pointer;
 }
-/* About page container with subtle green gradient background */
+/* About page container with subtle red-orange gradient background */
 .about-container {
   padding: 20px;
   max-width: 1500px;
   margin: 0 auto;
   margin-top: 30px;
-  background-color: #f9fff9; /* very light green background */
+  background-color: #ffe6e1; /* very light background */
   border-radius: 12px;
-  border: 1px solid green;
-  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.1);
-  color: green;
+  border: 1px solid #ff3b1f;
+  box-shadow: 0 4px 15px rgba(255, 59, 31, 0.1);
+  color: #ff3b1f;
 }
 
 /* Header styling with better spacing and font weights */
@@ -426,7 +418,7 @@ hr {
 .about-header h1 {
   font-size: 36px;
   margin-bottom: 16px;
-  color: #1f4d1f;
+  color: #cc3119;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -437,7 +429,7 @@ hr {
   margin: 0 auto;
   line-height: 1.7;
   font-weight: 500;
-  color: #497a49;
+  color: #ff6b4b;
   word-spacing: 0.1em;
 }
 
@@ -455,38 +447,38 @@ hr {
   align-items: center;
   gap: 60px;
   padding: 32px 20px;
-  background-color: #f7fdf7;
+  background-color: #fff0ef;
   border-radius: 14px;
-  box-shadow: 0 5px 15px rgba(42, 107, 42, 0.2);
+  box-shadow: 0 5px 15px rgba(204, 49, 25, 0.2);
   transition: box-shadow 0.4s ease;
   max-width: 1500px;
   width: 100%;
 }
 
 .user-card-container:hover {
-  box-shadow: 0 12px 30px rgba(42, 107, 42, 0.35);
+  box-shadow: 0 12px 30px rgba(204, 49, 25, 0.35);
 }
 
 /* User card box styling */
 .user-card {
   width: 360px;
   background-color: #ffffff;
-  border: 1px solid #3a773a;
+  border: 1px solid #cc3119;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(42, 107, 42, 0.1);
+  box-shadow: 0 6px 18px rgba(204, 49, 25, 0.1);
   padding: 28px 24px;
-  color: #2a6b2a;
+  color: #cc3119;
   text-align: center;
   font-weight: 600;
   cursor: default;
 }
 
-/* Profile image: bigger and crisp with green ring */
+/* Profile image: bigger and crisp with red-orange ring */
 .user-avatar {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 4px solid #3a773a;
+  border: 4px solid #cc3119;
   object-fit: cover;
   margin-bottom: 22px;
   transition: transform 0.3s ease;
@@ -507,13 +499,13 @@ hr {
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #4a8f4a;
+  color: #ff6b4b;
 }
 
 .user-contact {
   font-size: 18px;
   font-style: italic;
-  color: #609960;
+  color: #ff6b4b;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
@@ -525,12 +517,12 @@ hr {
   max-width: 1500px;
   margin: 12px auto;
   padding: 10px 16px;
-  background-color: #f0fff0;     /* very light green background */
-  border: 2px solid green;
+  background-color: #ffe6e1;      /* very light background */
+  border: 2px solid #ff3b1f;
   border-radius: 8px;
   font-family: Arial, sans-serif;
   font-weight: bold;
-  color: green;
+  color: #ff3b1f;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
@@ -538,7 +530,7 @@ hr {
 
 /* Hover effect */
 .res-category:hover {
-  background-color: green;
+  background-color: #ff3b1f;
   color: white;
 }
 
@@ -552,13 +544,10 @@ hr {
   font-size: 20px;
 }
 
-
-
-
 .description {
   padding: 10px 16px;
   flex-grow: 1;
-  color: green;
+  color: #ff3b1f;
   position: relative;
 }
 
@@ -576,7 +565,7 @@ hr {
 .more-button {
   background: none;
   border: none;
-  color: green;
+  color: #ff3b1f;
   font-weight: bold;
   cursor: pointer;
   padding: 0;
@@ -584,7 +573,7 @@ hr {
 }
 
 .menu-button {
-  background-color: green;
+  background-color: #ff3b1f;
   color: white;
   border: none;
   padding: 8px 12px;
